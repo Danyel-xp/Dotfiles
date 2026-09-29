@@ -19,10 +19,9 @@ PanelWindow {
     property date currentDateTime: new Date()
     property int selectedIndex: 0
 
-    // FontLoader for the futuristic day text
     FontLoader {
         id: customDisplayFont
-        source: Quickshell.shellPath("./assets/fonts/anurati-regular.otf")
+        source: Quickshell.shellPath("./assets/fonts/Electroharmonix.otf")
     }
 
     anchors { top: true; bottom: true; left: true; right: true }
@@ -423,9 +422,10 @@ PanelWindow {
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: Qt.formatDateTime(currentDateTime, "dddd").toUpperCase()
-                color: "#f2f2f2"
-                font.pixelSize: 52
+                color: "#80000000"
+                font.pixelSize: 70
                 font.letterSpacing: 12
+                font.weight: Font.ExtraBold
                 font.family: customDisplayFont.name
                 style: Text.Raised
                 styleColor: "#88000000"
@@ -446,10 +446,10 @@ PanelWindow {
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: Qt.formatDateTime(currentDateTime, "h:mm AP")
-                color: "#999999"
-                font.pixelSize: 12
+                color: "#80000000"
+                font.pixelSize: 18
                 font.letterSpacing: 2
-                font.family: "sans-serif"
+                font.family: "Electroharmonix"
             }
         }
     }
