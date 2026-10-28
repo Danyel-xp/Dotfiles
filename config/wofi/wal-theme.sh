@@ -43,4 +43,4 @@ cat > "$CSS" <<EOF
     border: 1px solid $(color color4);
     border-radius: 6px;
 }
-EOF e esse?
+EOF
