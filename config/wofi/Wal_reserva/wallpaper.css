@@ -1,0 +1,27 @@
+window {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 12px;
+    border: 1px solid rgb(77, 28, 122);
+    color: #ffffff;
+}
+
+#entry {
+    padding: 10px;
+    margin: 8px;
+    background: transparent;
+    border-radius: 12px;
+}
+
+#entry:selected {
+    background-color: #5e81ac;
+}
+
+#img {
+    margin: 5px;
+}
+
+#text {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+}
