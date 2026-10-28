@@ -1,0 +1,21 @@
+# local: ~/.config/wofi/config
+
+################################################
+############  CONFIGURAÇÕES DO WOFI ############
+################################################
+
+# O MODO PRINCIPAL
+mode = drun
+
+# Define o terminal a ser usado quando um aplicativo precisar de um terminal.
+term = kitty
+
+
+allow_images = true       # ícones
+image_size = 20
+insensitive = true        # Pesquisa sem diferenciar maiúsculas/minúsculas
+prompt = Welcome         # O texto que aparece na caixa de pesquisa
+
+# Tamanho da janela
+width = 700px
+height = 350px
