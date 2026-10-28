@@ -11,6 +11,8 @@ local nvim = "kitty nvim"
 local browser = "brave"
 local hyprshot = "hyprshot -m window"
 local hyprquickpaper = "qs -p ~/.config/quickshell/hyprquickpaper"
+local hyprcap_on = "hyprcap rec monitor:active -w -- --audio=$(pactl get-default-sink | sed 's/$/.monitor/')"
+local hyprcap_off = " hyprcap rec-stop"
 local kill_waybar = "pkill waybar"
 local waybar = "waybar &"
 ---------------------
@@ -32,7 +34,7 @@ hl.bind(
 )
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(hyprquickpaper))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- Apenas para dwindle
@@ -44,6 +46,10 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(nvim))
 --Hyprshot
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind("PRINT", hl.dsp.exec_cmd(hyprshot))
+
+--Hyprcap
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(hyprcap_on))
+hl.bind(mainMod .. " + " .. SHIFT .. " + R", hl.dsp.exec_cmd(hyprcap_off))
 
 --Waybar
 hl.bind(mainMod .. " + " .. SHIFT .. " + W", hl.dsp.exec_cmd(kill_waybar))

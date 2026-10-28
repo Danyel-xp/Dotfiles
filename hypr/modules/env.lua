@@ -6,7 +6,7 @@
 ---- VARIAVAEIS DE AMBIENTE ---
 -------------------------------
 
-
 hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "Pixel-Linux-Cursor")
 
+hl.env("HYPRCURSOR_SIZE", "24")

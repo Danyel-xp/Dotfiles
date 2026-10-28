@@ -60,3 +60,12 @@ hl.on("window.title", function(w)
 		hl.dispatch(hl.dsp.window.fullscreen({ action = "unset", window = w }))
 	end
 end)
+
+-- Evita que a seleção do slurp/hyprshot seja capturada com animação
+hl.layer_rule({
+	name = "selection-layer-no-anim",
+	match = {
+		namespace = "selection",
+	},
+	no_anim = true,
+})
