@@ -1,0 +1,163 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 0,
+
+  "modules-left": [
+    "custom/arch",
+    "hyprland/workspaces",
+    "custom/spotify"
+  ],
+
+  "modules-center": [
+    "hyprland/window"
+  ],
+
+  "modules-right": [
+    "network",
+    "battery",
+    "pulseaudio",
+    "backlight",
+    "clock",
+    "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+
+    "format":"{icon}",
+
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "custom/arch": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Arch"
+  },
+
+  "custom/spotify": {
+    "exec": "~/.config/waybar/scripts/spotify.sh",
+    "interval": 1,
+    "return-type": "text",
+
+    "on-click": "qs -p ~/.config/quickshell/music-panel ipc call music toggle",
+
+    "tooltip": true,
+    "tooltip-format": "Abrir controle de música"
+  },
+
+  "custom/power": {
+    "format": "<span>  </span>",
+    "on-click": "nwg-bar -p right",
+    "tooltip": true,
+    "tooltip-format": "Desligar"
+  },
+
+  "network": {
+    "interval": 1,
+
+    "format-wifi": "<span> 󰤨 </span>{essid} ",
+    "format-ethernet": "<span>  </span>",
+
+    "tooltip-format": "<span> 󰅧  </span>{bandwidthUpBytes}  <span> 󰅢  </span>{bandwidthDownBytes}",
+
+    "format-linked": "<span> 󱘖  </span>{ifname} (No IP) ",
+
+    "format-disconnected": "<span>   </span>Disconnected ",
+
+    "format-alt": "<span> 󰤨 </span>{signalStrength}% ",
+
+  },
+
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 15
+    },
+
+    "format": "<span> {icon}</span>",
+
+    "format-charging": " 󱐋{capacity}%",
+
+    "interval": 1,
+
+    "format-icons": [
+      "󰂎",
+      "󰁼",
+      "󰁿",
+      "󰂁",
+      "󰁹"
+    ],
+
+    "tooltip": true
+  },
+
+  "pulseaudio": {
+
+    "on-scroll-up":"wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 10%+",
+    "on-scroll-down":"wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-",
+
+    "format": "<span> {icon}</span>",
+
+    "format-muted": "<span color='#FF4040'> 󰖁 </span> ",
+
+    "format-icons": {
+      "headphone": "<span>  </span>",
+      "hands-free": "<span>  </span>",
+      "headset": "<span>  </span>",
+
+      "phone": "<span>  </span>",
+      "portable": "<span>  </span>",
+
+
+      "default": [
+        "<span color='#808080'></span>",
+        "<span> </span>",
+        "<span> </span>"
+      ]
+    },
+
+    "on-click": "pactl -- set-sink-mute 0 toggle",
+    "on-click-right": "pavucontrol -t 3",
+
+    "tooltip": true,
+
+    "tooltip-format": "Som do sistema: {volume}%"
+  },
+
+  "backlight": {
+    "on-scroll-up": "brightnessctl set +10%",
+    "on-scroll-down":"brightnessctl set 10%- -n 10",
+
+    "format": "<span>{icon}</span>",
+
+    "tooltip": true,
+
+    "tooltip-format": "Brilho da tela: {percent}%",
+
+    "format-icons": [
+      "<span> 󰃞  </span>",
+      "<span> 󰃝  </span>",
+      "<span> 󰃟  </span>",
+      "<span> 󰃠  </span>"
+    ]
+  },
+  
+  "clock": {
+    "interval": 1,
+
+    "timezone": "America/Sao_Paulo",
+
+    "format": "{:%H:%M}",
+
+    "tooltip": true,
+
+    "tooltip-format": "{:L%d de %B de %Y, %A}"
+  }
+}
+
